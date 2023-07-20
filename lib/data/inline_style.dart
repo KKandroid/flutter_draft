@@ -5,7 +5,7 @@ class InlineStyle {
   final int length;
   final String style;
 
-  InlineStyle.fromJson(Map<String, dynamic> json)
+  InlineStyle.fromJson(dynamic json)
       : offset = json['offset'] ?? 0,
         length = json['length'] ?? 0,
         style = json['style'] ?? "";
@@ -13,18 +13,20 @@ class InlineStyle {
   TextStyle addStyle(TextStyle oStyle) {
     if (style.contains("-")) {
       var field = style.split("-");
-      switch (field[0].toUpperCase()) {
+      var value = field[1];
+      var key = field[0];
+      switch (key.toUpperCase()) {
         case "COLOR":
-          oStyle = oStyle.copyWith(color: Color(int.parse(field[1], radix: 16)));
+          oStyle = oStyle.copyWith(color: Color(int.parse("FF$value", radix: 16)));
           break;
         case "FONTSIZE":
-          oStyle = oStyle.copyWith(fontSize: double.parse(field[1]));
+          oStyle = oStyle.copyWith(fontSize: double.parse(value));
           break;
         case "LETTERSPACING":
-          oStyle = oStyle.copyWith(letterSpacing: double.parse(field[1]));
+          oStyle = oStyle.copyWith(letterSpacing: double.parse(value));
           break;
         case "LINEHEIGHT":
-          oStyle = oStyle.copyWith(height: double.parse(field[1]));
+          oStyle = oStyle.copyWith(height: double.parse(value));
           break;
       }
     } else {
@@ -45,6 +47,13 @@ class InlineStyle {
     }
     return oStyle;
   }
+
+  @override
+  String toString() {
+    return "range=[$offset, ${offset + length}], style = $style";
+  }
+
+  bool inRange(int index) => index >= offset && index < offset + length;
 }
 
 class EntityRange {
@@ -52,10 +61,10 @@ class EntityRange {
   final int length;
   final int key;
 
-  EntityRange.fromJson(Map<String, dynamic> json)
+  EntityRange.fromJson(dynamic json)
       : offset = json['offset'] ?? 0,
         length = json['length'] ?? 0,
-        key = json['int'] ?? 0;
+        key = json['key'] ?? 0;
 }
 
 class Data {
@@ -68,8 +77,17 @@ class Data {
   final String? _textAlign;
   final int? _textIndent;
 
+  /// 有序列表编号
+  int? _number;
+
+  set number(int value) {
+    _number = value;
+  }
+
+  int get number => _number ?? 0;
+
   /// 文本缩进
-  double get textIndent => _textIndent?.toDouble() ?? 0;
+  int get textIndent => _textIndent ?? 0;
 
   TextAlign get textAlign {
     switch (_textAlign) {
@@ -90,7 +108,34 @@ class Data {
     return _textAlign == null && _textIndent == null;
   }
 
-  Data.fromJson(Map<String, dynamic> json)
+  Data.fromJson(dynamic json)
       : _textAlign = json['textAlign'],
         _textIndent = json['textIndent'];
+}
+
+/// {"type": "HR", "mutability": "IMMUTABLE", "data": {}
+class Entity {
+  final String? type;
+  final EntityData data;
+  final String? mutability;
+
+  Entity.fromJson(dynamic json)
+      : type = json['type'],
+        data = EntityData.fromJson(json['data']),
+        mutability = json['mutability'];
+}
+
+class EntityData {
+  final String? url;
+  final String? name;
+  final String? href;
+  final String? type;
+  final String? target;
+
+  EntityData.fromJson(dynamic json)
+      : url = json['url'],
+        name = json['name'],
+        href = json['href'],
+        type = json['type'],
+        target = json['target'];
 }
