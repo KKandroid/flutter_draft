@@ -12,6 +12,7 @@ class DraftTextView extends StatelessWidget {
   final DraftData data;
   final TextStyle defaultStyle;
   final OnLinkTab? onLinkTab;
+  final double blockSpacing = 8;
 
   DraftTextView.json(dynamic json,
       {Key? key, this.onLinkTab, this.defaultStyle = const TextStyle(fontSize: 12, color: Colors.black)})
@@ -37,6 +38,13 @@ class DraftTextView extends StatelessWidget {
 
   Widget itemBuilder(BuildContext context, int index) {
     final block = data.blocks[index];
+    return Padding(
+      padding: EdgeInsets.only(bottom: blockSpacing),
+      child: blockBuilder(context, block),
+    );
+  }
+
+  Widget blockBuilder(BuildContext context, Block block) {
     Text textView;
     var textTheme = Theme.of(context).textTheme;
     TextStyle textStyle;
@@ -91,7 +99,6 @@ class DraftTextView extends StatelessWidget {
     // 引用块
     if (block.type == BlockType.quote) {
       return Container(
-        margin: const EdgeInsets.symmetric(vertical: 4),
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
             color: Colors.grey.shade100, border: Border(left: BorderSide(color: Colors.grey.shade300, width: 5))),
@@ -100,7 +107,6 @@ class DraftTextView extends StatelessWidget {
     }
     if (block.type == BlockType.code) {
       return Container(
-        margin: const EdgeInsets.symmetric(vertical: 4),
         padding: const EdgeInsets.all(12),
         color: Colors.grey.shade100,
         child: textView,
