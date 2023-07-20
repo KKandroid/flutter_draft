@@ -109,7 +109,10 @@ class DraftTextView extends StatelessWidget {
       return Container(
         padding: const EdgeInsets.all(12),
         color: Colors.grey.shade100,
-        child: textView,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: textView,
+        ),
       );
     }
     // 无序列表

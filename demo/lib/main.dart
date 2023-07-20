@@ -40,6 +40,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   final json = {
     "blocks": [
       {
@@ -297,7 +298,13 @@ class _MyHomePageState extends State<MyHomePage> {
       },
       {
         "key": "amv2s",
-        "text": "代码",
+        "text": "import 'package:flutter/material.dart';\n"
+            "import 'package:flutter_draft/flutter_draft.dart';\n"
+            "\n"
+            "void main() => runApp(MyApp());\n"
+            "            padding: EdgeInsets.symmetric(horizontal: 8.dp, vertical: 12.dp),\n"
+            "\n",
+
         "type": "code-block",
         "depth": 0,
         "inlineStyleRanges": [],
