@@ -40,118 +40,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   final json = {
     "blocks": [
-      {
-        "key": "5tgf2",
-        "text": "普通文本段落",
-        "type": "unstyled",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [],
-        "data": {}
-      },
-      {
-        "key": "1brd2",
-        "text": "设置字号，行高，字间距。",
-        "type": "unstyled",
-        "depth": 0,
-        "inlineStyleRanges": [
-          {"offset": 2, "length": 2, "style": "FONTSIZE-30"},
-          {"offset": 5, "length": 2, "style": "LINEHEIGHT-4"},
-          {"offset": 8, "length": 3, "style": "LETTERSPACING-6"}
-        ],
-        "entityRanges": [],
-        "data": {}
-      },
-      {
-        "key": "ff65a",
-        "text": "文字颜色，加粗，斜体，下划线，删除线。",
-        "type": "unstyled",
-        "depth": 0,
-        "inlineStyleRanges": [
-          {"offset": 0, "length": 4, "style": "COLOR-07A9FE"},
-          {"offset": 5, "length": 2, "style": "BOLD"},
-          {"offset": 8, "length": 2, "style": "ITALIC"},
-          {"offset": 11, "length": 3, "style": "UNDERLINE"},
-          {"offset": 15, "length": 3, "style": "STRIKETHROUGH"}
-        ],
-        "entityRanges": [],
-        "data": {}
-      },
-      {
-        "key": "dvdud",
-        "text": "缩进：",
-        "type": "unstyled",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [],
-        "data": {}
-      },
-      {
-        "key": "a7unr",
-        "text": "缩进一次",
-        "type": "unstyled",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [],
-        "data": {"textIndent": 1}
-      },
-      {
-        "key": "59a47",
-        "text": "缩进两次",
-        "type": "unstyled",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [],
-        "data": {"textIndent": 2}
-      },
-      {
-        "key": "2crnd",
-        "text": "对齐：",
-        "type": "unstyled",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [],
-        "data": {}
-      },
-      {
-        "key": "d7c1o",
-        "text": "左对齐",
-        "type": "unstyled",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [],
-        "data": {"textAlign": "left"}
-      },
-      {
-        "key": "5o0o3",
-        "text": "居中",
-        "type": "unstyled",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [],
-        "data": {"textAlign": "center"}
-      },
-      {
-        "key": "bh9eg",
-        "text": "右对齐",
-        "type": "unstyled",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [],
-        "data": {"textAlign": "right"}
-      },
-      {
-        "key": "43af1",
-        "text": "两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐",
-        "type": "unstyled",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [],
-        "data": {"textAlign": "justify"}
-      },
       {
         "key": "26svh",
         "text": "标题：",
@@ -216,110 +106,157 @@ class _MyHomePageState extends State<MyHomePage> {
         "data": {}
       },
       {
+        "key": "2crnd",
+        "text": "",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "5tgf2",
+        "text": "普通文本段落",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "1brd2",
+        "text": "设置字号，行高，字间距。",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [
+          {"offset": 2, "length": 2, "style": "FONTSIZE-30"},
+          {"offset": 5, "length": 2, "style": "LINEHEIGHT-4"},
+          {"offset": 8, "length": 3, "style": "LETTERSPACING-6"}
+        ],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "ff65a",
+        "text": "文字颜色，加粗，斜体，下划线，删除线。",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [
+          {"offset": 0, "length": 4, "style": "COLOR-07A9FE"},
+          {"offset": 5, "length": 2, "style": "BOLD"},
+          {"offset": 8, "length": 2, "style": "ITALIC"},
+          {"offset": 11, "length": 3, "style": "UNDERLINE"},
+          {"offset": 15, "length": 3, "style": "STRIKETHROUGH"}
+        ],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "2crnd",
+        "text": "",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "dvdud",
+        "text": "缩进：",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "a7unr",
+        "text": "缩进一次",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {"textIndent": 1}
+      },
+      {
+        "key": "59a47",
+        "text": "缩进两次",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {"textIndent": 2}
+      },
+      {
+        "key": "2crnd",
+        "text": "",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "2crnd",
+        "text": "对齐：",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "d7c1o",
+        "text": "左对齐",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {"textAlign": "left"}
+      },
+      {
+        "key": "5o0o3",
+        "text": "居中",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {"textAlign": "center"}
+      },
+      {
+        "key": "bh9eg",
+        "text": "右对齐",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {"textAlign": "right"}
+      },
+      {
+        "key": "43af1",
+        "text": "两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {"textAlign": "justify"}
+      },
+      {
+        "key": "2crnd",
+        "text": "",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
         "key": "aah65",
         "text": "无序列表：",
         "type": "unstyled",
         "depth": 0,
         "inlineStyleRanges": [],
         "entityRanges": [],
-        "data": {}
-      },
-      {
-        "key": "36f85",
-        "text": "条目 1",
-        "type": "unordered-list-item",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [],
-        "data": {}
-      },
-      {
-        "key": "f31b6",
-        "text": "条目 2",
-        "type": "unordered-list-item",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [],
-        "data": {}
-      },
-      {
-        "key": "fv8qc",
-        "text": "条目 3",
-        "type": "unordered-list-item",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [],
-        "data": {}
-      },
-      {
-        "key": "ave0t",
-        "text": "有序列表",
-        "type": "unstyled",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [],
-        "data": {}
-      },
-      {
-        "key": "6ohov",
-        "text": "条目 1",
-        "type": "ordered-list-item",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [],
-        "data": {}
-      },
-      {
-        "key": "77a10",
-        "text": "条目 2",
-        "type": "ordered-list-item",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [],
-        "data": {}
-      },
-      {
-        "key": "cqrba",
-        "text": "条目 3",
-        "type": "ordered-list-item",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [],
-        "data": {}
-      },
-      {
-        "key": "74tge",
-        "text": "引用",
-        "type": "blockquote",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [],
-        "data": {}
-      },
-      {
-        "key": "amv2s",
-        "text": "import 'package:flutter/material.dart';\n"
-            "import 'package:flutter_draft/flutter_draft.dart';\n"
-            "\n"
-            "void main() => runApp(MyApp());\n"
-            "            padding: EdgeInsets.symmetric(horizontal: 8.dp, vertical: 12.dp),\n"
-            "\n",
-
-        "type": "code-block",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [],
-        "data": {}
-      },
-      {
-        "key": "7gfsi",
-        "text": "超链接",
-        "type": "unstyled",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [
-          {"offset": 0, "length": 3, "key": 0}
-        ],
         "data": {}
       },
       {
@@ -386,8 +323,17 @@ class _MyHomePageState extends State<MyHomePage> {
         "data": {}
       },
       {
-        "key": "aao1f",
+        "key": "2crnd",
         "text": "",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "ave0t",
+        "text": "有序列表",
         "type": "unstyled",
         "depth": 0,
         "inlineStyleRanges": [],
@@ -453,6 +399,49 @@ class _MyHomePageState extends State<MyHomePage> {
         "text": "item 3-2",
         "type": "ordered-list-item",
         "depth": 1,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "74tge",
+        "text": "引用",
+        "type": "blockquote",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "amv2s",
+        "text": "import 'package:flutter/material.dart';\n"
+            "import 'package:flutter_draft/flutter_draft.dart';\n"
+            "\n"
+            "void main() => runApp(MyApp());\n"
+            "            padding: EdgeInsets.symmetric(horizontal: 8.dp, vertical: 12.dp),\n"
+            "\n",
+        "type": "code-block",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "7gfsi",
+        "text": "超链接",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [
+          {"offset": 0, "length": 3, "key": 0}
+        ],
+        "data": {}
+      },
+      {
+        "key": "aao1f",
+        "text": "",
+        "type": "unstyled",
+        "depth": 0,
         "inlineStyleRanges": [],
         "entityRanges": [],
         "data": {}
@@ -563,9 +552,8 @@ class _MyHomePageState extends State<MyHomePage> {
         "type": "IMAGE",
         "mutability": "IMMUTABLE",
         "data": {
-          "url":
-              "https://flutter.github.io/assets-for-api-docs/assets/painting/box_fit_scaleDown.png",
-          "name": "App 借贷.png",
+          "url": "https://tu.sioe.cn/gj/qiege/image.jpg",
+          "name": "图片描述",
           "type": "IMAGE",
           "meta": {"id": "1689665708567_2"}
         }
@@ -581,7 +569,10 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: DraftTextView.json(json), // This trailing comma makes auto-formatting nicer for build methods.
+      body: DraftTextView.json(
+        json,
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

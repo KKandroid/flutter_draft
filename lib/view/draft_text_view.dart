@@ -14,12 +14,13 @@ class DraftTextView extends StatelessWidget {
   final OnLinkTab? onLinkTab;
   final double blockSpacing = 8;
   final ScrollController? controller;
+  final EdgeInsets? padding;
 
   DraftTextView.json(dynamic json,
       {Key? key,
       this.onLinkTab,
       this.defaultStyle = const TextStyle(fontSize: 12, color: Colors.black),
-      this.controller})
+      this.controller, this.padding})
       : data = DraftData.fromJson(json),
         super(key: key);
 
@@ -27,7 +28,7 @@ class DraftTextView extends StatelessWidget {
       {Key? key,
       this.onLinkTab,
       this.defaultStyle = const TextStyle(fontSize: 12, color: Colors.black),
-      this.controller})
+      this.controller, this.padding})
       : data = DraftData.fromJson(jsonDecode(json)),
         super(key: key);
 
@@ -36,12 +37,13 @@ class DraftTextView extends StatelessWidget {
       required this.data,
       this.onLinkTab,
       this.defaultStyle = const TextStyle(fontSize: 12, color: Colors.black),
-      this.controller})
+      this.controller, this.padding})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      padding: padding,
       controller: controller,
       itemBuilder: itemBuilder,
       itemCount: data.blocks.length,
