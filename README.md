@@ -7,11 +7,8 @@
 
 
 
-![](res/simulator_screenshot_1.webp)
-![](res/simulator_screenshot_2.webp)
-![](res/simulator_screenshot_3.webp)
 
-
+### demo 数据
 ~~~
 {
     "blocks": [
@@ -533,4 +530,11 @@
       }
     }
   };
-  ~~~
+~~~
+  
+
+### 实现效果图
+
+![](res/screenshot_1.webp)
+![](res/screenshot_2.webp)
+![](res/screenshot_3.webp)
