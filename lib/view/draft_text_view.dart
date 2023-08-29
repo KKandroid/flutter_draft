@@ -20,7 +20,8 @@ class DraftTextView extends StatelessWidget {
       {Key? key,
       this.onLinkTab,
       this.defaultStyle = const TextStyle(fontSize: 12, color: Colors.black),
-      this.controller, this.padding})
+      this.controller,
+      this.padding})
       : data = DraftData.fromJson(json),
         super(key: key);
 
@@ -28,7 +29,8 @@ class DraftTextView extends StatelessWidget {
       {Key? key,
       this.onLinkTab,
       this.defaultStyle = const TextStyle(fontSize: 12, color: Colors.black),
-      this.controller, this.padding})
+      this.controller,
+      this.padding})
       : data = DraftData.fromJson(jsonDecode(json)),
         super(key: key);
 
@@ -37,7 +39,8 @@ class DraftTextView extends StatelessWidget {
       required this.data,
       this.onLinkTab,
       this.defaultStyle = const TextStyle(fontSize: 12, color: Colors.black),
-      this.controller, this.padding})
+      this.controller,
+      this.padding})
       : super(key: key);
 
   @override
@@ -83,7 +86,8 @@ class DraftTextView extends StatelessWidget {
         textStyle = textTheme.titleLarge ?? defaultStyle;
         break;
       case BlockType.code:
-        textStyle = defaultStyle.copyWith(fontWeight: FontWeight.w500, color: Colors.grey.shade700);
+        textStyle = defaultStyle.copyWith(
+            fontWeight: FontWeight.w500, color: Colors.grey.shade700);
         break;
       case BlockType.quote:
         textStyle = TextStyle(
@@ -100,14 +104,20 @@ class DraftTextView extends StatelessWidget {
     if (block.inlineStyle.isNotEmpty) {
       var styleMap = block.textStyleMap(textStyle);
       textView = Text.rich(
-          TextSpan(children: styleMap.map((entry) => TextSpan(text: entry.key, style: entry.value)).toList()),
+          TextSpan(
+              children: styleMap
+                  .map((entry) => TextSpan(text: entry.key, style: entry.value))
+                  .toList()),
           textAlign: block.data.textAlign);
     } else {
-      textView = Text(block.text, style: textStyle, textAlign: block.data.textAlign);
+      textView =
+          Text(block.text, style: textStyle, textAlign: block.data.textAlign);
     }
     if (!block.data.isEmpty && block.data.textIndent != 0) {
       return Padding(
-        padding: EdgeInsets.only(left: TextUtil.measureText('缩进', textStyle).width * block.data.textIndent),
+        padding: EdgeInsets.only(
+            left: TextUtil.measureText('缩进', textStyle).width *
+                block.data.textIndent),
         child: textView,
       );
     }
@@ -116,7 +126,9 @@ class DraftTextView extends StatelessWidget {
       return Container(
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-            color: Colors.grey.shade100, border: Border(left: BorderSide(color: Colors.grey.shade300, width: 5))),
+            color: Colors.grey.shade100,
+            border: Border(
+                left: BorderSide(color: Colors.grey.shade300, width: 5))),
         child: textView,
       );
     }
@@ -135,7 +147,8 @@ class DraftTextView extends StatelessWidget {
       var size = TextUtil.measureText('缩进', textStyle);
       double dotSize = 5;
       const solid = BoxDecoration(color: Colors.black, shape: BoxShape.circle);
-      var hollow = BoxDecoration(shape: BoxShape.circle, border: Border.all(color: Colors.black));
+      var hollow = BoxDecoration(
+          shape: BoxShape.circle, border: Border.all(color: Colors.black));
       Widget dot = Container(
         width: dotSize,
         height: dotSize,
@@ -183,7 +196,8 @@ class DraftTextView extends StatelessWidget {
             );
             children.add(image);
             if (entity.data.name?.isNotEmpty ?? false) {
-              children.add(Text(entity.data.name!, style: textStyle, textAlign: TextAlign.center));
+              children.add(Text(entity.data.name!,
+                  style: textStyle, textAlign: TextAlign.center));
             }
             break;
           case EntityType.divider:
@@ -196,9 +210,13 @@ class DraftTextView extends StatelessWidget {
                 children: [
                   TextSpan(text: text.substring(0, range.offset)),
                   TextSpan(
-                    text: text.substring(range.offset, range.offset + range.length),
-                    style: textStyle.copyWith(color: Colors.blue, decoration: TextDecoration.underline),
-                    recognizer: TapGestureRecognizer()..onTap = () => onLinkTab?.call(entity.data.url ?? ""),
+                    text: text.substring(
+                        range.offset, range.offset + range.length),
+                    style: textStyle.copyWith(
+                        color: Colors.blue,
+                        decoration: TextDecoration.underline),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () => onLinkTab?.call(entity.data.url ?? ""),
                   ),
                   TextSpan(text: text.substring(range.offset + range.length)),
                 ],

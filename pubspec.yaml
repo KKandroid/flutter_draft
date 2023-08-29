@@ -1,7 +1,8 @@
 name: flutter_draft
 description: A Flutter project to display draft.js  rich text  with flutter widget
-version: 1.0.0
-homepage:
+version: 1.0.1
+homepage: https://github.com/KKandroid/flutter_draft
+repository: https://github.com/KKandroid/flutter_draft
 
 environment:
   sdk: ">=2.15.1 <3.0.0"

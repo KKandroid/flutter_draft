@@ -17,7 +17,8 @@ class InlineStyle {
       var key = field[0];
       switch (key.toUpperCase()) {
         case "COLOR":
-          oStyle = oStyle.copyWith(color: Color(int.parse("FF$value", radix: 16)));
+          oStyle =
+              oStyle.copyWith(color: Color(int.parse("FF$value", radix: 16)));
           break;
         case "FONTSIZE":
           oStyle = oStyle.copyWith(fontSize: double.parse(value));
