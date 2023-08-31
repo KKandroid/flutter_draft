@@ -21,7 +21,7 @@ class InlineStyle {
               oStyle.copyWith(color: Color(int.parse("FF$value", radix: 16)));
           break;
         case "FONTSIZE":
-          oStyle = oStyle.copyWith(fontSize: double.parse(value));
+          oStyle = oStyle.copyWith(fontSize: parseSize(value));
           break;
         case "LETTERSPACING":
           oStyle = oStyle.copyWith(letterSpacing: double.parse(value));
@@ -47,6 +47,13 @@ class InlineStyle {
       }
     }
     return oStyle;
+  }
+
+  double parseSize(String value){
+    if(value.endsWith("pt")){
+      return double.parse(value.substring(0, value.length - 2));
+    }
+    return double.parse(value);
   }
 
   @override

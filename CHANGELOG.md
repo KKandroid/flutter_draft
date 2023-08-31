@@ -6,3 +6,6 @@
   picture, horizontal dividing line, display of links, etc.
 ### 1.0.1
 - Add doc and example.
+### 1.0.2
+- Fix bug FONTSIZE value with pt.
+
