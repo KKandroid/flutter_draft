@@ -8,4 +8,5 @@
 - Add doc and example.
 ### 1.0.2
 - Fix bug FONTSIZE value with pt.
-
+### 1.0.3
+-Fix bug ordered-list-item text line wrapping.
